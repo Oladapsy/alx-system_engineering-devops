@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+#using a while loop to print Best school 10 times
+# and extra 1 time Hi at the 9th instance
+# making the numbber of line 11
+#after shellcheck is used you should get no error
+#the _ variable represents an unused variable
+var="Best School"
+var2="Hi"
+i="1"
+while [ $i -ne 11 ]; do
+	if [ $i -eq 10 ]; then
+		echo "$var2"
+	fi
+	echo "$var"
+	((i++))
+done
