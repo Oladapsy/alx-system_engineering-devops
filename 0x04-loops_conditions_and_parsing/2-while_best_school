@@ -5,7 +5,7 @@
 
 var="Best School"
 i="0"
-while [ $i -le 10 ]; do
+while [ $i -lt 10 ]; do
 	echo "$var"
 	((i++))
 done
