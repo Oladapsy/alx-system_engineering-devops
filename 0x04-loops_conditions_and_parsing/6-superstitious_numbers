@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# using bash script display number 1 to 20
+# display 4 and then black luck from china
+# display 17 and the bad luck from italy
+# you are to use while loop and case statement
+
+var1="bad luck from China"
+var2="bad luck from Japan"
+var3="bad luck from Italy"
+i=1
+while [ $i -ne 21 ]; do
+	case $i in
+		4)
+			echo "$i" && echo "$var1"
+			;;
+		9)
+			echo "$i" && echo "$var2"
+			;;
+		17)
+
+			echo "$i" && echo "$var3"
+			;;
+		*)
+
+			echo "$i"
+			;;
+	esac
+	((i++))
+done
+
