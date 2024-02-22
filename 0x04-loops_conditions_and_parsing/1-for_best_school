@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+var="Best School"
+for _ in [{1..10}]; do
+	echo "$var"
+done
