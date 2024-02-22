@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#using a until loop to print Best school 10 times
+#after shellcheck is used you should get no error
+#the _ variable represents an unused variable
+
+var="Best School"
+i='0'
+until [ $i -eq 10 ]; do
+	echo "$var"
+	((i++))
+done
