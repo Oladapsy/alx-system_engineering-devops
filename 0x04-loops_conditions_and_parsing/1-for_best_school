@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
+#using a loop to print Best school 10 times
+#after shellcheck is used you should get no error
+#the _ variable represents an unused variable
 var="Best School"
 for _ in [{1..10}]; do
 	echo "$var"
