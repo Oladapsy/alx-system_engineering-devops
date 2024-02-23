@@ -4,9 +4,10 @@
 #You must use if and, else (case is forbidden)
 # Your Bash script should check if the file exists and print:
 # if the file exists: school file exists
+
 i="school"
 if [ -e "$i" ]; then
-	echo "$i file exist"
+	echo "$i file exists"
 	if [ -s "$i" ]; then
 		echo "$i file is not empty"
 	else
