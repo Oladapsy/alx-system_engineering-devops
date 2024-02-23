@@ -13,10 +13,10 @@
 
 if [ -e "school" ]; then
 	echo "school file exist"
-	if [ ! -s "school" ]; then
-		echo "school file is empty"
-	else
+	if [ -s "school" ]; then
 		echo "school file is not empty"
+	else
+		echo "school file is empty"
 	fi
 	if [ -f "school" ]; then
 		echo "school is a regular file"
