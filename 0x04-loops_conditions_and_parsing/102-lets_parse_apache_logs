@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# aceesing a log file and filtering out the needed item
+# the ip address and the error received
+# use the awk and dont use the loops
+
+awk '{print $1 " " $8}' apache-access.log
