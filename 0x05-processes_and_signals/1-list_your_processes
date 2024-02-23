@@ -5,4 +5,4 @@
 # have a TTY
 # Display in a user-oriented format
 # Show process hierarchy
-top
+ps -u
