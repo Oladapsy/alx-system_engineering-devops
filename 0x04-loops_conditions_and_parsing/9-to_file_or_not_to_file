@@ -5,14 +5,18 @@
 # Your Bash script should check if the file exists and print:
 # if the file exists: school file exists
 
-if [ -e "school" ]; then
+if [ -e "school" ]
+then
 	echo "school file exist"
-	if [ -s "school" ]; then
+	if [ -s "school" ]
+       	then
 		echo "school file is not empty"
 	else
 		echo "school file is empty"
 	fi
-	if [ -f "school" ]; then
+
+	if [ -f "school" ]
+       	then
 		echo "school is a regular file"
 	fi
 else
