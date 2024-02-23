@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# aceesing a log file as done in 102
+# get how many many occurenec the ip occurs
+# awk must be used and then loops should not be used
+
+awk '{print $1 " " $9}' apache-access.log | uniq -c
