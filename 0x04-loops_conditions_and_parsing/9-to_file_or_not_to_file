@@ -6,16 +6,17 @@
 # if the file exists: school file exists
 i="school"
 if [ -e "$i" ]; then
-	echo "school file exist"
+	echo "$i file exist"
 	if [ -s "$i" ]; then
-		echo "school file is not empty"
+		echo "$i file is not empty"
 	else
-		echo "school file is empty"
+		echo "$i file is empty"
 	fi
 
 	if [ -f "$i" ]; then
-		echo "school is a regular file"
+		echo "$i is a regular file"
 	fi
+
 else
-	echo "school file does not exist"
+	echo "$i file does not exist"
 fi
