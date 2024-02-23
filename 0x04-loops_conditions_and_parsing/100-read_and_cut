@@ -7,6 +7,6 @@
 # Home directory path for the user
 # Requirements:
 # You must use the while loop (for and until are forbidden)
-while read passwd; do
+while read -r passwd; do
 	echo "$passwd" | cut -d ":" -f 1, 3, 6
 done < "/etc/passwd"
