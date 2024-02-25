@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# a bash loop to infinity with sleep 2
+# and prints whenever interupted, so gets uninterupted
+# kill it with prev script
+
+while true; do
+	echo "To infinity and beyond"
+	sleep 2
+	trap 'echo "I am invincible!!!"' 15
+done
