@@ -4,4 +4,4 @@
 # You cannot use kill or killall
 # Terminal #0
 
-pkill "$(4-to_infinity_and_beyond)"
+pkill -f 4-to_infinity_and_beyond
