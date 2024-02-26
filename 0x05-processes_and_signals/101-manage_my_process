@@ -20,7 +20,6 @@
 # Displays Usage: manage_my_process {start|stop|restart} if any
 # other argument or no argument is passed
 
-file="/var/run/my_process.pid"
 if [ "$1" == "start" ]; then
 	./manage_my_process &
 	echo $$ > "$file"
