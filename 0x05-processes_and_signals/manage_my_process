@@ -4,8 +4,7 @@
 # Indefinitely writes I am alive! to the file /tmp/my_process
 # In between every I am alive! message, the program should pause for 2 seconds
 
-file="/tmp/my_process"
 while true; do
-	echo "I am alive!" > "$file"
+	echo "I am alive!" > /tmp/my_process
 	sleep 2
 done
