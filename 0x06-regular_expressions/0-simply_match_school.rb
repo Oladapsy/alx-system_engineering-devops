@@ -3,4 +3,4 @@
 #flag for global
 #by: odedeyi oladapo olayinka
 
-/Holberton/g
+/School/g
