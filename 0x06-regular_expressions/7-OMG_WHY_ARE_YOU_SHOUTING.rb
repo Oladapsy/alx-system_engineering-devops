@@ -1,3 +1,3 @@
 #!/usr/bin/env ruby
 #by: odedeyi oladapo olayinka
-puts ARGV[0].scan(/\w/i).join
+puts ARGV[0].scan(/[A-Z]*/).join
