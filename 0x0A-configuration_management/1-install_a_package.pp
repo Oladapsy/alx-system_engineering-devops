@@ -1,7 +1,6 @@
 # Using Puppet, install flask from pip3.
-
 package { 'python3.8':
-    ensure  => '3.8.10',
+    ensure => '3.8.10',
 }
 
 package { 'flask':
@@ -10,7 +9,7 @@ package { 'flask':
 }
 
 package { 'werkzeug':
-  ensure   => 'latest',
+  ensure   => '2.1.1',
   provider => 'pip3',
   require  => Package['Flask'],
 }
