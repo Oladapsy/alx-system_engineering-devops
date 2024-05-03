@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# a program that git add .
+# git commits and ask for tthe commir message
+# git push
+
+commit=$1
+
+git add .
+echo "your commit msg is $commit"
+git commit -m "$commit"
+git push
