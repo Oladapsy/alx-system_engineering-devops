@@ -1,0 +1,33 @@
+#!/usr/bin/env bash
+# configure web-02 as web-01
+#configure Ngnix to have a header for its responses
+
+apt-get update
+apt-get install -y nginx
+
+mkdir -p /var/www/html
+touch /var/www/html/index.html
+echo "Hello World!" > /var/www/html/index.html
+touch /var/www/html/404.html
+echo "Ceci n''\'est pas une page" > /var/www/html/404.html
+
+printf %s "server {
+    listen 80 default_server;
+    listen[::]:80 default_server;
+    add_header X-Served by $HOSTNAME;
+    root    /var/www/html;
+    index   index.html index.htm;
+
+    location /redirect_me {
+        return 301 http://youtube.com/cryptotechcoder;
+    }
+
+    error_page 404 /404.html;
+    location /404 {
+        root /var/www/html;
+        internal;
+    }
+  }" > etc/nginx/sites-available/default
+
+
+service nginx restart
