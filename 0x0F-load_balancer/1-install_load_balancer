@@ -4,6 +4,7 @@
 
 apt-get -y update
 apt-get -y install haproxy
+sudo chown $USER:USER /etc/haproxy/haproxy.cfg
 
 echo "
 backend web-backend
