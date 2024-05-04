@@ -1,9 +1,9 @@
-#!/bin/bash
+#!/usr/bin/env bash
 # install load balancer
 # Install and configure HAproxy on your lb-01 server.Install and configure HAproxy on your lb-01 server.
 
 apt-get -y update
-apt-get -y install haproxy=2.0
+apt-get -y install haproxy
 
 echo "
 backend web-backend
