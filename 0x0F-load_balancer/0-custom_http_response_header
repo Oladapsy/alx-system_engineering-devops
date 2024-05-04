@@ -14,7 +14,7 @@ echo "Ceci n'est pas une page" > /var/www/html/404.html
 printf %s "server {
     listen 80 default_server;
     listen[::]:80 default_server;
-    add_header X-Served-By by $HOSTNAME;
+    add_header X-Served-By $HOSTNAME;
     root    /var/www/html;
     index   index.html index.htm;
 
