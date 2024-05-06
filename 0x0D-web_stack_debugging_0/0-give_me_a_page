@@ -1,2 +1,9 @@
 #!/usr/bin/env bash
 # fixing commands with bash
+# make the apache server print Hello Holberton
+
+sudo apt-get update -y
+sudo apt-get install -y apache2
+sudo /etc/init.d/apache2 start
+echo "Hello Holberton" | sudo tee -a /var/www/html/index.html
+sudo /etc/init.d/apache2 restart
