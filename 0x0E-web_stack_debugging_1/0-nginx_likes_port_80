@@ -3,7 +3,6 @@
 
 sudo apt-get update -y
 sudo apt-get install -y nginx
-rm /etc/nginx/sites-available/default
-touch /etc/nginx/sites-available/default
+cat /etc/nginx/sites-available/default > /etc/nginx/sites-available/default
 sudo ufw allow 'Nginx HTTP'
 sudo systemctl restart nginx
