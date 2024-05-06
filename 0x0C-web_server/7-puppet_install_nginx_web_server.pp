@@ -18,7 +18,7 @@ file_line { 'install':
 }
 
 file { '/var/www/html/index.html':
-  content => 'Holberton School',
+  content => 'Hello World!',
 }
 
 service { 'nginx':
