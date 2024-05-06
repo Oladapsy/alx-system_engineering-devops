@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
 # Install Nginx web server (w/ Puppet)
 # To save time and effort, you should also include resources in your manifest to perform a 301 redirect when querying /redirect_me
 # Nginx should be listening on port 80
