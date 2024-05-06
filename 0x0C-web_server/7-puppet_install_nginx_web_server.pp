@@ -7,7 +7,7 @@
 
 # install nginx with puppet
 
-package {'nginx':
+package { 'nginx':
 	ensure => installed,
 }
 
@@ -18,11 +18,11 @@ file_line { 'install':
 	line   => 'rewrite ^/redirect_me https://www.youtube.com/@cryptotechcoder permanent;',
 }
 
-file {'/var/www/html/index.html',
+file { '/var/www/html/index.html',
 	content => 'Hello World!',
 }
 
-service {'nginx':
+service { 'nginx':
 	ensure  => running,
 	require => package['nginx'],
 }
