@@ -1,0 +1,66 @@
+Answering the ever green Web Infrastructure Question:
+
+Hello Guys!!! Today i am going to be answering the QUESTION: What happens when you type https://www.google.com in your browser and press Enter.
+
+In answering this question here are important keys we need to touch that goes under the hood:
+
+1. DNS request
+2. TCP/IP
+3. Firewall
+4. HTTPS/SSL
+5. Load-balancer
+6. Web server
+7. Application server
+8. Database
+
+Introduction:
+The Journey of a URL when typed into the browser for example "https://www.google.com" and Press Enter is not a straight and direct question and answer, a lot goes under the hood. Multiple system technology are working under the hood in order to get us information when we enter this url.
+
+In this post, we'll take a deep dive into the journey of a URL, using "https://www.google.com" as an example.
+
+Preliminary step:
+The browser first try and see what type of protocol to use for communication, since we specifies we are using the secured ssl version of http protocol this makes it easy for the browser. but in cases where we didn't specify, the browser will defaulty check for the bests appropriate one. mostly http if the secured version isn't present.
+
+Step 1: DNS Request
+When you type "https://www.google.com" into your browser, the first step is to resolve the domain name to an IP address. Computers communicate with each other via IP addresses the browser has an IP address and will want to communicate with a server when a URL is entered. the server which is another computer also has an IP address but becasue we human will have to remember each server IP address whenever we want to visit the server, a more simple way to remember this is done, this is done by mapping a name called the domain name to a server IP address with a protocol called the DNS record. This record is like a ledger that knows all the names mapped with an IP address. Therefore, anytime a domain name is entered into a browser the browser first try to resolve the domain name into an IP address. The browser follow many steps in doing this which include.
+
+a. checking the browser's cache to see if the site has been visited before in order to get the IP from the cache stored on the browser
+b. the browser also check the operating system /etc/host file to see if google.com for example IP address is there
+c. if all this fail the browser checks the internet provider and checks the DNS servers from root domain to top level domain, which you can check up on your own.
+the basic analogy or idea of this is that the "https://www.google.com" is resolved into an IP address...
+
+#fun activity: type this on your linux browser >>>$ ping www.google.com #see what happens
+you should get somthing like this
+>>># ping www.google.com
+PING www.google.com (142.250.184.164) 56(84) bytes of data.
+64 bytes from mad07s23-in-f4.1e100.net (142.250.184.164): icmp_seq=1 ttl=109 time=101 ms
+64 bytes from mad07s23-in-f4.1e100.net (142.250.184.164): icmp_seq=2 ttl=109 time=112 ms
+64 bytes from mad07s23-in-f4.1e100.net (142.250.184.164): icmp_seq=3 ttl=109 time=109 ms# did you get this? >>> 142.250.184.164
+....
+
+
+Step 2: TCP/IP
+Once the IP address is resolved, your browser establishes a connection with the server using the TCP/IP protocol. Like i said earlier, computers talk to each other via the IP addresses one way is using the TCP/IP or the UDP/IP protocol.
+For https or http protocol the TCP/IP protocol is used as the https/http protocol is built on this protocol. TCP (Transmission Control Protocol) ensures that data is delivered reliably and in the correct order, unlike UDP which dosen't really take order seriously but more faster which is why it is used for live streaming... The IP of the  TCP (Internet Protocol) routes the data packets between networks, as IP are meant for communication.
+
+
+Step 3: Firewall
+As the request passes through the internet, it may encounter firewalls that block or allow traffic based on predetermined security rules. Firewalls are kind of like a protective wall that enables our data to be secured from unwanted IP addresses which means unwanted computers. Firewalls can be configured to allow or deny access to specific IP addresses, ports, or protocols. so the firewall has to accept your browser's IP in order to continue with the next stage... fire walls are mostly used for security reasons and to restrict certain IPs as stated.
+
+Step 4: HTTPS/SSL
+First i talked about the http/https protocol at the preliminary stage... Since the URL starts with https, it means we are not just using the http protocol but the secured version which the s ttands for. The connection is encrypted using SSL (Secure Sockets Layer) or TLS (Transport Layer Security). This ensures that the data exchanged between your browser and the server remains confidential and tamper-proof. The SSL security helps encrypt the message sent from the server and decrypt when received by the browser and vice versal. this is done with different algorithimic pattern e.g. RSA which generates both a public key and a private key of division of two large prime numbers very hard to guess or decode, if one try to, by the time the person is done, it might have taken maybe 5 years or Jesus must have come.. # ha ha ha .... 
+
+Step 5: Load Balancer
+Because so many people will be trying to access google.com, google must have several servers to be able to serve all the browsers tryinng to access the website. when 5000 people try to visit google.com for example they all may be sent to a particular server and which could make the server slow or crash due to overload. to solve this a multiple server is used, but still would not stop the browser from accessing a particular server. To then solve this, a load balancer is used e.g haproxy. This load balancer accept the request at its frontend and its backend is configured to connect to other servers. the load balancer has different way of being configured, which either sends the request to the less busy server or in a sequential order.
+
+Step 6: Web Server
+The request is then received by a web server. on the server we majorly do have a web server installed, app server, game server, mail server, and name it. also a database might be installed or connected... when the request hits the server, the browser sends a get request and the web server handles it. the web server processes the request and returns the HTML, CSS, and JavaScript files that make up the Google homepage. (don't forget it gets encrypted by ssl of the http and decrypted on arrival on the browser).
+
+Step 7: Application Server
+The web server may also communicate with an application server, which handles business logic and data processing. In Google's case, the application server would retrieve data from the database and perform any necessary calculations before returning the results to the web server, and returning it to the browser.
+
+Step 8: Database
+The application server retrieves data from a database, which stores information such as search results, user preferences, and advertising content. (note that all this are on the server)
+
+Conclusion
+When you type https://www.google.com and press Enter, your browser initiates a complex process that involves DNS resolution, TCP/IP connection establishment, firewall traversal, HTTPS encryption, load balancing, web server processing, application server logic, and database retrieval. This journey highlights the many systems and technologies that work together to deliver the websites and applications we use every day.
