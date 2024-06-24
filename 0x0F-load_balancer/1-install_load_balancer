@@ -7,14 +7,14 @@ apt-get -y install haproxy
 sudo chown $USER:USER /etc/haproxy/haproxy.cfg
 
 echo "
-backend web-backend
+frontend deetechwiz
+	bind *:80
+	mode http
+	default_backend app
+
+backend app
    balance roundrobin
    server 335310-web-01 100.25.192.119:80 check
-   server 335310-web-02	54.148.84.198:80 check
-
-frontend http
-   bind *:80
-   mode http
-   default_backend web-backend" >> /etc/haproxy/haproxy.cfg
+   server 335310-web-02	54.148.84.198:80 check" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
