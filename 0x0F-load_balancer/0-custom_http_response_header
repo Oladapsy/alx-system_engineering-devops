@@ -11,7 +11,7 @@ apt-get install -y nginx
 
 mkdir /etc/nginx/html
 touch /etc/nginx/html/index.html
-echo "Holberton School" > /etc/nginx/html/index.html
+echo "Hello World!" > /etc/nginx/html/index.html
 touch /etc/nginx/html/404.html
 echo "Ceci n'est pas une page" > /etc/nginx/html/404.html
 
