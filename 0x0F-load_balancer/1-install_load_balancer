@@ -9,8 +9,8 @@ sudo chown $USER:USER /etc/haproxy/haproxy.cfg
 echo "
 backend web-backend
    balance roundrobin
-   server 335310-web-01 34.207.156.215:80 check
-   server 335310-web-02	34.202.164.23:80 check
+   server 335310-web-01 100.25.192.119 check
+   server 335310-web-02	54.148.84.198 check
 
 frontend http
    bind *:80
