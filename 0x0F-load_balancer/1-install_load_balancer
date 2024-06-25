@@ -2,7 +2,7 @@
 # Install your load balancer
 sudo apt-get -y update
 sudo apt-get -y install haproxy
-sudo chown  $USER:$USER /etc/haproxy/haproxy.cfg
+sudo chown $USER:$USER /etc/haproxy/haproxy.cfg
 
 echo "
 frontend deeweb
