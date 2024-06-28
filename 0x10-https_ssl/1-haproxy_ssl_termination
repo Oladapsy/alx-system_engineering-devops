@@ -12,6 +12,8 @@ global
         ca-base /etc/ssl/certs
         crt-base /etc/ssl/private
 
+        # Diffie-Hellman parameters
+        tune.ssl.default-dh-param 2048
         # See: https://ssl-config.mozilla.org/#server=haproxy&server-version=2.0.3&config=intermediate
         ssl-default-bind-ciphers ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-CHACHA20-POLY1305:ECDHE-RSA-CHACHA20-POLY1305:DHE-RSA-AES128-GCM-SHA256:DHE-RSA-AES256-GCM-SHA384
         ssl-default-bind-ciphersuites TLS_AES_128_GCM_SHA256:TLS_AES_256_GCM_SHA384:TLS_CHACHA20_POLY1305_SHA256
@@ -33,12 +35,13 @@ defaults
         errorfile 503 /etc/haproxy/errors/503.http
         errorfile 504 /etc/haproxy/errors/504.http
 
-backend web-backend
-        balance roundrobin
-        server 335310-web-01 34.207.156.215:80 check
-        server 335310-web-02    34.202.164.23:80 check
+backend cryptotechcoder
+    balance roundrobin
+    server 335310-web-01 100.25.192.119:80 check
+    server 335310-web-02 54.146.84.198:80 check
 
 frontend http
-        bind *:80
-        bind *:443 ssl crt /etc/letsencrypt/live/www.deetechwiz.tech/deetechwiz.pem        http-request redirect scheme https unless { ssl_fc }
-        default_backend web-backend
+    bind *:80
+    bind *:443 ssl crt /etc/letsencrypt/live/www.deetechwiz.tech/haproxy.pem
+    mode http
+    default_backend cryptotechcoder
