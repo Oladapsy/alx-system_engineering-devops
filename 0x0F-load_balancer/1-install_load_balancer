@@ -13,7 +13,7 @@ frontend cryptotechcoder
 
 backend app
     balance roundrobin
-    server 439003-web-01 100.25.192.119:80 check
-    server 439003-web-02 54.146.84.198:80 check" >> /etc/haproxy/haproxy.cfg
+    server 439003-web-01 54.162.232.135:80 check
+    server 439003-web-02 18.234.249.5:80 check" >> /etc/haproxy/haproxy.cfg
 
 sudo service haproxy restart
