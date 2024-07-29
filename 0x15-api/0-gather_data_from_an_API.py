@@ -1,7 +1,7 @@
 #!/usr/bin/python3
 """ returns list info about the employee given an ID """
-from sys import argv
 import requests
+from sys import argv
 """ the request module used to fetch the url response"""
 
 
