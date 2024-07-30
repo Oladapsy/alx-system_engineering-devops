@@ -12,7 +12,7 @@ def get_employee_todo_progress(employee_id):
         url = "https://jsonplaceholder.typicode.com/"
         user_datas = requests.get(url + f"users/{employee_id}")
         user_data = user_datas.json()
-        employee_name = user_data['name']
+        employee_name = user_data['username']
 
         """now lets fetch the todos list for an employee
         note that we use todos?<dic_key>=value"""
