@@ -1,6 +1,7 @@
 #!/usr/python3
 """ queries the Reddit API and returns the number of subscribers """
 import requests
+"""the request model"""
 
 
 def number_of_subscribers(subreddit):
