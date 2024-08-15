@@ -1,0 +1,36 @@
+i will be using web-debugging#1 for this project
+
+duration of the outage:
+	 this was a task in alx:
+	 so i started 11:45am and was fixed at 12:45pm West African Time
+	 
+	 the site was not listening at port 80:
+	 and all users were affected
+
+	 the cause was that the site settings because its an nginx server the site-available settings was not linked to site-enabled default settings so the configuartion was ok but the configuration was not enabled making users not able to get to the site...
+
+Timeline:
+
+The issue was detected i will say by alx coz i was given the task to do...
+but since we are using my instances i will say when alx tried to visit the website so they escalated it to me....
+
+the issue was deteced via alx monitoring alert...
+
+they reached out to me to fix it ...
+
+misleading investigation: i tot there were errors in the configuration and checked through and took a while before i checked which service was listerning to port 80 before later checking the site enabled and figured its not there...
+
+i checked the site enabled and saw it wasnt enabled so i did and test and it worked, so that is how i resolved it...
+
+
+Root causes:
+i think i have said that
+
+so i wrote a script that should be executed after each configuartion to ensure it dosent repeat
+
+#!/usr/bin/env bash
+# Nginx likes port 80
+
+cat /etc/nginx/sites-available/default > /etc/nginx/sites-enabled/default
+sudo service nginx restart
+correction:
