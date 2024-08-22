@@ -3,7 +3,7 @@
 
 #increade the ULIMIT of the nginx default
 exec { 'increase-ulimit':
-    command => '/bin/sed -i "s/15/4096/" /etc/default/nginx'
+    command => '/bin/sed -i \'s/ULIMIT="-n 15"/ULIMIT="-n 4096"/\' /etc/default/nginx'
 }
 
 #restart nginx
