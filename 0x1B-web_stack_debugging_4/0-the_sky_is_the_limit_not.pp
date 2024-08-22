@@ -4,7 +4,7 @@ exec { 'Nginx-User-Limit-Increase':
     command => 'sed -i "s/15/4096/" /etc/default/nginx',
     path    => '/bin/:/usr/bin/',
 }
--> exec { 'restart-nginx':
+exec { 'restart-nginx':
     command => 'service nginx restart',
-    path    => '/etc/init.d/',
+    path    => '/usr/sbin/:/sbin/',
 }
