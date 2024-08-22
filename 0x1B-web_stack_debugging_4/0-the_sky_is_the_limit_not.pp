@@ -1,11 +1,10 @@
-# increase the user limit of nginx server to be able to serve to more traffic
+# Increases the amount of traffic an Nginx server can handle.
 
-#increase user limit of default
-exec { 'nginx-user-limit-increase':
-    command => 'sed -i \'s/ULIMIT="-n 15"/ULIMIT="-n 4096"/\' /etc/default/nginx',
-    path    => '/bin/:/usr/bin/',
+# Increase the ULIMIT of the default file
+exec { 'fix--for-nginx':
+  command => '/bin/sed -i \'s/ULIMIT="-n 15"/ULIMIT="-n 4096"/\' /etc/default/nginx',
 }
-exec { 'restart-nginx':
-    command => 'service nginx restart',
-    path    => '/usr/sbin/:/sbin/',
+# Restart Nginx
+exec { 'nginx-restart':
+  command => '/usr/sbin/service nginx restart',
 }
