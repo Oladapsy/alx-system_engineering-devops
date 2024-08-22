@@ -5,6 +5,6 @@ exec { 'Nginx-User-Limit-Increase':
     path    => '/bin/:/usr/bin/',
 }
 exec { 'restart-nginx':
-    command => 'service nginx restart',
+    command => 'nginx restart',
     path    => '/usr/sbin/:/sbin/',
 }
